@@ -62,7 +62,33 @@ public class ConllectionsTest {
 		   System.out.println("元素：" + string);
 	   }
 	   
+   }
+   
+   /**
+    * 3.对其他类型泛型的list进行排序，以Student为例
+    */
+   public void testSort3(){
+	   List<Student> list = new ArrayList<Student>();
+	   Random ran = new Random();
+	   list.add(new Student(ran.nextInt(1000)+"","Make"));
+	   list.add(new Student(ran.nextInt(1000)+"","Jack"));
+	   list.add(new Student(ran.nextInt(1000)+"","Carl"));
+	   list.add(new Student(10000 +"","Beyaon"));
+	   System.out.println("-------------排序前--------------------");
+	   for (Student student : list) {
+		System.out.println("学生："+student.id+"::" +student.name);
+	   }
+	   Collections.sort(list);
+	   System.out.println("-------------排序后--------------------");
+	   for (Student student : list) {
+			System.out.println("学生："+student.id+"::" +student.name);
+	   }
 	   
+	   Collections.sort(list,new StudentComparator());
+	   System.out.println("-------------按照姓名排序后-----------");
+	   for (Student student : list) {
+		   System.out.println("学生："+student.id+"::" +student.name);
+	   }
 	   
    }
 	
@@ -71,6 +97,7 @@ public class ConllectionsTest {
                ConllectionsTest ct= new ConllectionsTest();
                 ct.testSort1();
                 ct.testSort2();
+                ct.testSort3();
 	}
 
 }
