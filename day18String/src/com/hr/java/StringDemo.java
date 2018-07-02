@@ -5,11 +5,11 @@ import org.junit.Test;
 /**
  * 
  *
- *@Description:×Ö·û´®µÄ·´×ª
+ *@Description:å­—ç¬¦ä¸²çš„åè½¬
  *
  *@Name : StringDemo
  *@Author : LH
- *@Date : 2018-6-1ÏÂÎç10:26:45
+ *@Date : 2018-6-1ä¸‹åˆ10:26:45
  *@Version : V1.0
  *
  */
@@ -30,7 +30,7 @@ public class StringDemo {
 		String str5 = reverse3(str);
 		System.out.println(str5);
 	}
-	//1.ÊµÏÖ×Ö·û´®µÄ·´×ª
+	//1.å®ç°å­—ç¬¦ä¸²çš„åè½¬
 	public static String reverse(String str){
 		char [] c = str.toCharArray();
 		for(int i =0 , j =c.length-1 ; i < j ; i++ , j--){
@@ -41,20 +41,20 @@ public class StringDemo {
 		return new String(c);
 	}
 	
-	//·½·¨¶ş
+	//æ–¹æ³•äºŒ
 	public static String reverse2(String str){
 		 StringBuffer sb = new StringBuffer(str);
 		 return sb.reverse().toString();
 	}
-	//·½·¨Èı
+	//æ–¹æ³•ä¸‰
 	public static String reverse3(String str){
 		if(str == null || str.length() <= 1)
 			return str;
 		return reverse3(str.substring(1)) +str.charAt(0);
 	}
 	
-	  /**
-	   *  2.½«Ò»¸ö×Ö·û´®½øĞĞ·´×ª¡£½«×Ö·û´®ÖĞÖ¸¶¨²¿·Ö½øĞĞ·´×ª¡£±ÈÈç½«¡°abcdefg¡±·´×ªÎª¡±abfedcg¡±
+	/**
+	   *  2.å°†ä¸€ä¸ªå­—ç¬¦ä¸²è¿›è¡Œåè½¬ã€‚å°†å­—ç¬¦ä¸²ä¸­æŒ‡å®šéƒ¨åˆ†è¿›è¡Œåè½¬ã€‚æ¯”å¦‚å°†â€œabcdefgâ€åè½¬ä¸ºâ€abfedcgâ€
 	   */
 	public static String reverseString(String str, int start, int  end){
 		   

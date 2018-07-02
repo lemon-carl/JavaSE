@@ -12,13 +12,13 @@ import org.junit.Test;
  * 
  * @Name  : StringTest180619
  * @Author : LH
- * @Date : 2018Äê6ÔÂ29ÈÕ ÏÂÎç3:35:48
+ * @Date : 2018å¹´6æœˆ29æ—¥ ä¸‹åˆ3:35:48
  * @Version : V1.0
  * 
  * @Description :  
- *    		  1¡¢¹¦ÄÜ£ºÑ¹Ëõ×Ö·û´®(aaabbccc --> a3b2c3)
- *           2¡¢¹¦ÄÜ£ºÇóÖ÷´®ÖÐ×Ö·û×Ó´®µÄÎ»ÖÃÒÔºóµÄ×Ó´®(fffggbbckkll bbc --> bbckkll)
- *           3¡¢¹¦ÄÜ£ºµ¹Êým¸ö×Ö·û£¬ÒÆ¶¯×Ö·û´®(ABCDEFGHI£¬M=3 --> GHIABCDEF)
+ *    		  1ã€åŠŸèƒ½ï¼šåŽ‹ç¼©å­—ç¬¦ä¸²(aaabbccc --> a3b2c3)
+ *           2ã€åŠŸèƒ½ï¼šæ±‚ä¸»ä¸²ä¸­å­—ç¬¦å­ä¸²çš„ä½ç½®ä»¥åŽçš„å­ä¸²(fffggbbckkll bbc --> bbckkll)
+ *           3ã€åŠŸèƒ½ï¼šå€’æ•°mä¸ªå­—ç¬¦ï¼Œç§»åŠ¨å­—ç¬¦ä¸²(ABCDEFGHIï¼ŒM=3 --> GHIABCDEF)
  */
 public class StringTest180619 {
 
@@ -38,7 +38,7 @@ public class StringTest180619 {
 			    	}
 			
 					/**
-					 * 1¡¢¹¦ÄÜ£ºÑ¹Ëõ×Ö·û´®(aaabbccc --> a3b2c3)
+					 *  1ã€åŠŸèƒ½ï¼šåŽ‹ç¼©å­—ç¬¦ä¸²(aaabbccc --> a3b2c3)
 					 * @param String:s 
 					 * @return 
 					 */
@@ -53,7 +53,7 @@ public class StringTest180619 {
 						int j=1,k=1;
 						for(int i=1;i<c.length;i++){
 							if(c[i] != c[i-1]){
-								//°ÑÏàÍ¬×Ö·ûºóÃæ²»Í¬µÄµÚÒ»¸ö×Ö·û£¬ÒÔ¼°ºóÃæËùÓÐµÄ×Ö·ûÔÚ×ªÎªcahrÊý×é
+								//æŠŠç›¸åŒå­—ç¬¦åŽé¢ä¸åŒçš„ç¬¬ä¸€ä¸ªå­—ç¬¦ï¼Œä»¥åŠåŽé¢æ‰€æœ‰çš„å­—ç¬¦åœ¨è½¬ä¸ºcahræ•°ç»„
 								char[] ktmp = String.valueOf(k).toCharArray();
 								for(int t=0; t<ktmp.length; t++){
 									tmp[j]= ktmp[t];
@@ -77,7 +77,7 @@ public class StringTest180619 {
 					}
 					
 					/**
-					 * 2¡¢¹¦ÄÜ£ºÇóÖ÷´®ÖÐ×Ö·û×Ó´®µÄÎ»ÖÃÒÔºóµÄ×Ó´®(fffggbbckkll bbc --> bbckkll)
+					 *  2ã€åŠŸèƒ½ï¼šæ±‚ä¸»ä¸²ä¸­å­—ç¬¦å­ä¸²çš„ä½ç½®ä»¥åŽçš„å­ä¸²(fffggbbckkll bbc --> bbckkll)
 					 * @param Stirng:str
 					 * @param String:sub
 					 * @return 
@@ -101,7 +101,7 @@ public class StringTest180619 {
 
 					
 					/**
-					 * 3¡¢¹¦ÄÜ£ºµ¹Êým¸ö×Ö·û£¬ÒÆ¶¯×Ö·û´®(ABCDEFGHI£¬M=3 --> GHIABCDEF)
+					 *3ã€åŠŸèƒ½ï¼šå€’æ•°mä¸ªå­—ç¬¦ï¼Œç§»åŠ¨å­—ç¬¦ä¸²(ABCDEFGHIï¼ŒM=3 --> GHIABCDEF)
 					 * @param ss
 					 * @param M
 					 * @return
@@ -113,7 +113,7 @@ public class StringTest180619 {
 						int len = s.length;
 						if(M>len) M = len;
 						while(len>M){
-							for(i=0,tmp=s[0],M++;i<len-1;i++){ //Õû¸ö×Ö·û×óÒÆÒ»´Î
+							for(i=0,tmp=s[0],M++;i<len-1;i++){ //æ•´ä¸ªå­—ç¬¦å·¦ç§»ä¸€æ¬¡
 								s[i] = s[i+1];
 							}
 							s[len-1]=tmp;
