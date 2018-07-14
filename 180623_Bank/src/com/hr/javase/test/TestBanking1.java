@@ -3,9 +3,9 @@
  * It creates a new Bank, sets the Customer (with an initial balance),
  * and performs a series of transactions with the Account object.
  */
-package com.hr.javase.bank.test;
+package com.hr.javase.test;
 
-import com.hr.javase.bank.Account;
+import com.hr.javase.bank1.Account;
 
 /**
  * 
@@ -13,9 +13,7 @@ import com.hr.javase.bank.Account;
  * @Author : LH
  * @Date : 2018年7月2日 下午10:50:12
  * @Version : V1.0
- * 
  * @Description :
- * 
  * 实验题目 1： ：
  * 创建一个简单的银行程序包
  * 实验目的： ：

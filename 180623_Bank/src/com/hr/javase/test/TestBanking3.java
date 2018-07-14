@@ -1,4 +1,4 @@
-package com.hr.javase.bank.test;
+package com.hr.javase.test;
 /*
  * This class creates the program to test the banking classes.
  * It creates a new Bank, sets the Customer (with an initial balance),
@@ -10,16 +10,17 @@ import com.hr.javase.bank3.Customer;
 
 
 /**
- *  This class creates the program to test the banking classes.
- * It creates a new Bank, sets the Customer (with an initial balance),
- * and performs a series of transactions with the Account object.
  * 
  * @Name  : TestBanking3
  * @Author : LH
  * @Date : 2018年7月2日 下午11:17:59
  * @Version : V1.0
- * 
  * @Description :
+ * 
+ * 实验题目 3： ：
+ * 修改 withdraw 方法以返回一个布尔值，指示交易是否成功。
+ * 实验目的： ：
+ * 使用有返回值的方法。
  * 
  * 输出结果：
  * Creating the customer Jane Smith.

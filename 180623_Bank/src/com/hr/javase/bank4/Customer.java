@@ -1,14 +1,13 @@
-package com.hr.javase.bank3;
+package com.hr.javase.bank4;
 
 /**
  * 
  * @Name  : Customer
  * @Author : LH
- * @Date : 2018年7月2日 下午11:17:14
+ * @Date : 2018年7月14日 下午5:34:36
  * @Version : V1.0
  * 
  * @Description :
- * 
  */
 public class Customer {
 

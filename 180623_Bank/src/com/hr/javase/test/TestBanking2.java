@@ -1,4 +1,4 @@
-package com.hr.javase.bank.test;
+package com.hr.javase.test;
 
 import com.hr.javase.bank2.Account;
 import com.hr.javase.bank2.Customer;
@@ -11,7 +11,6 @@ import com.hr.javase.bank2.Customer;
  * @Author : LH
  * @Date : 2018年7月2日 下午10:56:53
  * @Version : V1.0
- * 
  * @Description :
  * 实验题目 2： ：
  * 扩展银行项目，添加一个 Customer 类。Customer 类将包含一个 Account对象。

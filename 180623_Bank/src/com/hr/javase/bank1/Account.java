@@ -1,10 +1,10 @@
-package com.hr.javase.bank3;
+package com.hr.javase.bank1;
 
 /**
  * 
  * @Name  : Account
  * @Author : LH
- * @Date : 2018年7月2日 下午11:00:01
+ * @Date : 2018年7月2日 下午10:44:46
  * @Version : V1.0
  * 
  * @Description :
@@ -16,12 +16,6 @@ package com.hr.javase.bank3;
  *    c. 声明一个公有方法 geBalance，该方法用于获取经常余额。
  *    d. 声明一个公有方法 deposit,该方法向当前余额增加金额。
  *    e. 声明一个公有方法 withdraw 从当前余额中减去金额。
- *    
- *    提  示： ：
- *    1． 修改 Account 类
- *    a. 修改 deposit 方法返回 true（意味所有存款是成功的）。
- *    b. 修改 withdraw 方法来检查提款数目是否大于余额。
- *    如果amt小于 balance, 则从余额中扣除提款数目并返回 true，否则余额不变返回false。
  */
 public class Account {
 
@@ -43,27 +37,17 @@ public class Account {
 		/**
 		 * 存钱方法
 		 * @param amt 存款的钱数
-		 * @return  返回存款是否成功
 		 */
-		public boolean deposit(double amt) {
+		public void deposit(double amt) {
 			  this.balance += amt;
-			  return true;
 		}
 		
 		/**
 		 * 取钱方法
 		 * @param amt 取款的钱数
-		 * @return 返回取款是否成功
 		 */
-		public boolean  withdraw(double amt) {
-			
-			if( amt > balance ) {
-				return false;
-			}
-			
+		public void withdraw(double amt) {
 			this.balance -= amt;
-			return  true;
-			
 		}
 		
 
