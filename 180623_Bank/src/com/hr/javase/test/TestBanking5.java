@@ -7,7 +7,9 @@ package com.hr.javase.test;
 
 import com.hr.javase.bank5.Account;
 import com.hr.javase.bank5.Bank;
+import com.hr.javase.bank5.CheckingAccount;
 import com.hr.javase.bank5.Customer;
+import com.hr.javase.bank5.SavingAccount;
 
 /**
  * 
@@ -21,14 +23,7 @@ import com.hr.javase.bank5.Customer;
  * 在银行项目中创建 Account 的两个子类：SavingAccount 和 CheckingAccount
  * 实验目的： ：
  * 继承、多态、方法的重写。
- * 提  示： ：
- * 创建 Account 类的两个子类：SavingAccount 和 CheckingAccount 子类
- * a. 修改 Account 类；将 balance 属性的访问方式改为 protected
- * b. 创建 SavingAccount 类，该类继承 Account 类
- * c. 该类必须包含一个类型为 double 的 interestRate 属性
- * d. 该类必须包括带有两个参数（balance 和 interest_rate）的公有构造器。
- *    该构造器必须通过调用 super(balance)将 balance 参数传递给父类构造器。
- *    
+ *
  *  6． 在主 exercise1 目录中，编译并执行 TestBanking 程序。输出应为：
  *    Creating the customer Jane Smith.
  *    Creating her Savings Account with a 500.00 balance and 3% interest.
@@ -82,19 +77,27 @@ public class TestBanking5 {
 					    //code
 					    System.out.println("Creating her Savings Account with a 500.00 balance and 3% interest.");
 					    //code
-					
+					    bank.getCustomer(0).setAccount(new SavingAccount(500.00, 0.03));
+					    
 					    System.out.println("Creating the customer Owen Bryant.");
 					    //code
+					    bank.addCustomer("Owen", "Bryant");
 					    customer = bank.getCustomer(1);
 					    System.out.println("Creating his Checking Account with a 500.00 balance and no overdraft protection.");
 					    //code
+					    customer.setAccount(new CheckingAccount(500.00));
+					    
 					    System.out.println("Creating the customer Tim Soley.");
 					    bank.addCustomer("Tim", "Soley");
 					    customer = bank.getCustomer(2);
+					    
 					    System.out.println("Creating his Checking Account with a 500.00 balance and 500.00 in overdraft protection.");
 					    //code
+					    customer.setAccount(new CheckingAccount(500.00,500.00));
+					    
 					    System.out.println("Creating the customer Maria Soley.");
 					    //code
+					    bank.addCustomer("Maria", "Soley");
 					    customer = bank.getCustomer(3);
 					    System.out.println("Maria shares her Checking Account with her husband Tim.");
 					    customer.setAccount(bank.getCustomer(2).getAccount());
