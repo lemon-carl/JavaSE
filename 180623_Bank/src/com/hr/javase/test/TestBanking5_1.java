@@ -61,7 +61,7 @@ import com.hr.javase.bank5.SavingAccount;
  *    Withdraw 750.00: false
  *    Customer [Soley, Maria] has a balance of 150.0
  */
-public class TestBanking5 {
+public class TestBanking5_1 {
 
 					  public static void main(String[] args) {
 					    Bank     bank = new Bank();
