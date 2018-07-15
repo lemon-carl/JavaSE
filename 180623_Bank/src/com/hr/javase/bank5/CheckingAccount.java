@@ -45,7 +45,7 @@ public class CheckingAccount extends Account {
 					if(balance >= amt) {
 						balance -=amt;
 					}else {
-						if(overdraftProtection >=(amt - balance)) {
+						if(overdraftProtection >= (amt - balance)) {
 							overdraftProtection -= (amt - balance);
 							balance =0;
 						}else {

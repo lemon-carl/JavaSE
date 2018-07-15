@@ -77,8 +77,8 @@ public class TestBanking5_2 {
 			
 			      System.out.println();
 			      System.out.println("Customer: "
-						 + customer.getLastName() + ", "
-						 + customer.getFirstName());
+						 + customer.getFirstName() + ", "
+						 + customer.getLastName());
 			
 			      for ( int acct_idx = 0; acct_idx < customer.getNumberOfAccounts(); acct_idx++ ) {
 				Account account = customer.getAccount(acct_idx);
