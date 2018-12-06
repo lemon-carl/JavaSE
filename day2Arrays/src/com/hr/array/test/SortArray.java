@@ -16,6 +16,7 @@ import java.util.concurrent.Executors;
  * 冒泡排序
  * 直接选择排序
  * 反转排序
+ * 快速排序
  */
 public class SortArray {
 

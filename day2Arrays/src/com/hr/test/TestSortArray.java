@@ -2,6 +2,7 @@ package com.hr.test;
 
 import org.junit.Test;
 
+import com.hr.array.test.QuickSort;
 import com.hr.array.test.SortArray;
 
 
@@ -15,7 +16,7 @@ import com.hr.array.test.SortArray;
  * 1.冒泡排序
  * 2.直接选择排序
  * 3.反转排序
- * （快速排序）
+ * 4.快速排序
  */
 public class TestSortArray {
 
@@ -51,5 +52,27 @@ public class TestSortArray {
        int t = "abc".length();
         System.out.println(t);
 
+    }
+    
+    /**
+     * 4.快速排序
+     */
+    @Test
+    public void testQuickSort(){
+        String [] strVoid = new String[]{"11","66","22","0","55","22","0","32"};
+        //QuickSort sort = new QuickSort();
+        long start = System.currentTimeMillis();
+        System.err.println(start);
+        System.out.println(" ");
+        QuickSort.quickSort(strVoid, 0, strVoid.length-1);
+         for (int i = 0; i < strVoid.length; i++) {
+			System.out.print(strVoid[i] + ", ");
+		}
+         System.out.println(" ");
+         long end = System.currentTimeMillis();
+         System.err.println(end);
+         System.out.println(" ");
+         System.out.println((end-start) +"毫秒");
+    	
     }
 }
