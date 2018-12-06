@@ -1,4 +1,4 @@
-package com.hr.array.test;
+package com.hr.array;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,12 +16,12 @@ import java.util.concurrent.Executors;
  * 冒泡排序
  * 直接选择排序
  * 反转排序
- * 快速排序
+ * 快�?排序
  */
 public class SortArray {
 
     /**
-     * 冒泡排序（相邻的元素比较）
+     * 冒泡排序（相邻的元素比较�?
      * @param array
      */
     public void bubbleSort(int [] array){
@@ -39,7 +39,7 @@ public class SortArray {
     }
 
     /**
-     * 显示数组中的所有元素
+     * 显示数组中的�?��元素
      * @param array  要显示的数组
      */
     private void showArray(int[] array) {
@@ -71,7 +71,7 @@ public class SortArray {
     }
 
     /**
-     * 反转排序 （相反的顺序把原有数组的元素重新排序，第一个和最后一个，第二个和倒数第二个替换）
+     * 反转排序 （相反的顺序把原有数组的元素重新排序，第�?��和最后一个，第二个和倒数第二个替换）
      */
     public void reverseSort(int [] array){
         System.out.println("数组原有内容:");
@@ -83,7 +83,7 @@ public class SortArray {
             array[i] = array[len - 1 - i];
             array[len - 1 - i] = temp;
         }
-        System.out.println("反转后的内容：");
+        System.out.println("反转后的内容�?);
         showArray(array);
     }
 

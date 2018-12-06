@@ -2,8 +2,8 @@ package com.hr.test;
 
 import org.junit.Test;
 
-import com.hr.array.test.QuickSort;
-import com.hr.array.test.SortArray;
+import com.hr.array.QuickSort;
+import com.hr.array.SortArray;
 
 
 

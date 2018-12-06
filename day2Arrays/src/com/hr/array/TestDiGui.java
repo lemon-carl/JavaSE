@@ -1,4 +1,4 @@
-package com.hr.array.test;
+package com.hr.array;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;

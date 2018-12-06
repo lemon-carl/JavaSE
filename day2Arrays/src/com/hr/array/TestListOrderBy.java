@@ -1,4 +1,4 @@
-package com.hr.array.test;
+package com.hr.array;
 
 import java.util.ArrayList;
 import java.util.List;

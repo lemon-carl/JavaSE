@@ -1,4 +1,4 @@
-package com.hr.array.test;
+package com.hr.array;
 
 /**
  * ¿ìËÙÅÅĞò
