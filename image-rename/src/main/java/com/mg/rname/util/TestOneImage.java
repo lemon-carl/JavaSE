@@ -10,7 +10,7 @@ import java.io.File;
  * 问题描述：命名出来的都是四位数例如0001，0002，0003后面+.txt或者.jpg之类的
  * https://blog.csdn.net/qq_37745307/article/details/89950570
  */
-public class Test {
+public class TestOneImage {
 
     public static void main(String[] args) {
         String path = "F:/image/ABC12345/";

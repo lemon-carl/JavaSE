@@ -14,6 +14,10 @@ public class FindFileTest {
         queryFileName(dirname);
     }
 
+    /**
+     * 列出某目录下的所有目录和图片
+     * @param dirname
+     */
     private static void queryFileName(String dirname) {
 
         File f1 = new File(dirname);
