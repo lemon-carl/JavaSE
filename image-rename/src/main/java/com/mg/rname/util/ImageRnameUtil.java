@@ -52,8 +52,8 @@ public class ImageRnameUtil {
                     String lastStr = oldName.substring(oldName.indexOf(".")+1);
                     System.out.println("后缀名："+lastStr);
                     // System.out.println("44444:" + lastindex);
-                    if (index == 0 || lastStr.equals("db")) {
-                        System.out.println("此文件为隐藏文件或后缀为db的文件，不处理");
+                    if (index == 0 || lastStr.equals("db") || lastStr.equals("DS_Store")) {
+                        System.out.println("此文件为隐藏文件或后缀为db、DS_Store的文件，不处理");
                         continue;
                     } else {
 
