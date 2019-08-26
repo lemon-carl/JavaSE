@@ -8,18 +8,18 @@ import java.io.File;
  * @Version 1.0
  * @Desc https://www.runoob.com/java/java-file.html
  */
-public class ImageRnameUtil {
+public class BatchRnameImageUtil {
 
     public static void main(String args[]) {
         String path = "F:/rename_image/image";
-        queryFileName(path);
+        queryFileNameAndReName(path);
     }
 
     /**
      * Java实现图片批量命名处理
      * @param path
      */
-    private static void queryFileName(String path) {
+    public static void queryFileNameAndReName(String path) {
         File f1 = new File(path);
         //定义循环中需要的变量
         String newName = "";
@@ -39,7 +39,7 @@ public class ImageRnameUtil {
                     //System.out.println("：" + s[i]);
                     System.out.println("目录路径:" + filename);
                     //递归循环处理目录同级文件和下一级的目录和文件
-                    queryFileName(filename);
+                    queryFileNameAndReName(filename);
 
                 } else {
                     //System.out.println("文件：" + s[i]);

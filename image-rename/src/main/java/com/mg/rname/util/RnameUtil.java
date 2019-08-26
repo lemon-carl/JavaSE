@@ -11,7 +11,7 @@ import java.io.File;
  */
 public class RnameUtil {
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         File file = new File("F:/image"); //D:/001/
         String dirfile = file.getAbsolutePath();
         File[] files = file.listFiles();
@@ -75,6 +75,6 @@ public class RnameUtil {
         }
 
 
-    }
+    }*/
 
 }

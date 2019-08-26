@@ -10,7 +10,7 @@ import java.io.File;
  * 问题描述：命名出来的都是四位数例如0001，0002，0003后面+.txt或者.jpg之类的
  * https://blog.csdn.net/qq_37745307/article/details/89950570
  */
-public class TestOneImage {
+public class RenameOneFileUtil {
 
     public static void main(String[] args) {
         String path = "F:/image/ABC12345/";
@@ -21,7 +21,7 @@ public class TestOneImage {
      * 单个类型外图片批量命名（不包括主图下）
      * @param path
      */
-    private static void imageRename(String path) {
+    public static void imageRename(String path) {
         //fs为存储文件的字符数组
         File file = new File(path);
         //定义循环中需要的变量
