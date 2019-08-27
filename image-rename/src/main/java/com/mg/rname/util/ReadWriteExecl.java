@@ -10,6 +10,7 @@ import jxl.format.BorderLineStyle;
 import jxl.format.Colour;
 import jxl.write.*;
 import jxl.write.biff.RowsExceededException;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -30,18 +31,19 @@ import java.util.Set;
  * jxl操作Excel包括对象Workbook（工作簿），Sheet（工作表） ，Cell（单元格）。
  * 一个Excel就对应一Workbook对象，一个Workbook可以有多个Sheet对象，一个Sheet对象可以有多个Cell对象。
  */
+@Slf4j
 public class ReadWriteExecl {
 
     public static void main(String[] args) {
         //execl 文件类型
-        String execlFile = "F:/rename_image/type3.xls";
+        String execlFile = "F:/rename_image/type_check.xls";
         //硬盘中文件目录
-        String dirname = "F:/rename_image/image600/image";
+        String dirname = "F:/rename_image/image";
         try {
             File file = new File(execlFile);
             ArrayList<String> dirList = FindFileAllUtil.findFileDirName(dirname);
 
-            System.out.println("正在读取型号名...");
+            log.info("正在读取型号名...");
             List<String> typeList = ReadWriteExecl.readColumn(file, 0); //读取第一列
 
             Set<String> set = new HashSet<String>();
@@ -57,8 +59,8 @@ public class ReadWriteExecl {
                 }
             }
 
-            System.out.println("读取完毕");
-            System.out.println("--------具体清单有的目录，路径下没有------------------------");
+            log.info("读取完毕");
+            log.info("--------具体清单有的目录，路径下没有------------------------");
             //将集合2中和集合1相同的数据移除掉，剩下不相同的数据，这样得到集合和集合1不相同的数据
             for (String p : set) {
                 typeList.remove(p);
@@ -92,7 +94,7 @@ public class ReadWriteExecl {
         Sheet sheet = workbook.getSheet(0); //index从0开始，0对应Sheet1
         int rows = sheet.getRows();
         int columns = sheet.getColumns(); //获取该sheet 有几列
-        System.out.println(columns + "----------");
+        System.out.println("-------------execl 中共有 "+columns + " 列----------");
         for (int i = 1; i < rows; i++) {
             //3.获取单元格：
             Cell cell = sheet.getCell(index, i);

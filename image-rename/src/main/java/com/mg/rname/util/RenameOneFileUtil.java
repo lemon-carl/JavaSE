@@ -1,5 +1,7 @@
 package com.mg.rname.util;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.File;
 
 /**
@@ -10,6 +12,7 @@ import java.io.File;
  * 问题描述：命名出来的都是四位数例如0001，0002，0003后面+.txt或者.jpg之类的
  * https://blog.csdn.net/qq_37745307/article/details/89950570
  */
+@Slf4j
 public class RenameOneFileUtil {
 
     public static void main(String[] args) {
@@ -19,6 +22,7 @@ public class RenameOneFileUtil {
 
     /**
      * 单个类型外图片批量命名（不包括主图下）
+     *
      * @param path
      */
     public static void imageRename(String path) {
@@ -34,34 +38,34 @@ public class RenameOneFileUtil {
 
         String fileName = file.getName();
         String[] fs = file.list();
-        System.out.println("文件："+fileName);
+        log.info("文件：" + fileName);
 
         for (int i = 0; i < fs.length; i++) {
             oldName = fs[i];
             String filename = path + "/" + fs[i];
             File f2 = new File(filename);
-            if(!f2.isDirectory()) {
+            if (!f2.isDirectory()) {
                 index = oldName.lastIndexOf(".");
                 //获取 "." 之前两位数
-                subNum = oldName.substring(index-2,index);
-                System.out.println("下标：" + index+" 后缀名点之前两位数："+subNum);
+                subNum = oldName.substring(index - 2, index);
+                log.info("下标：" + index + " 后缀名点之前两位数：" + subNum);
                 //（型号_head_1、型号_head_2、型号_head_3、型号_head_4)
-               String num =  subNum.substring(0,1);
-               if( Integer.parseInt(num) == 0){
-                   newName = fileName+"_detail_"+subNum.substring(1);
-               } else{
-                   newName = fileName+"_detail_"+subNum;
-               }
+                String num = subNum.substring(0, 1);
+                if (Integer.parseInt(num) == 0) {
+                    newName = fileName + "_detail_" + subNum.substring(1);
+                } else {
+                    newName = fileName + "_detail_" + subNum;
+                }
 
-                System.out.println(newName);
+                log.info(newName);
                 //截取oldName中.txt
                 newName += oldName.substring(index);
                 f = new File(path + "/" + oldName);
                 f.renameTo(new File(path + "/" + newName));
-            }else {
+            } else {
 
             }
         }
-        System.out.println("运行结束");
+        log.info("运行结束");
     }
 }

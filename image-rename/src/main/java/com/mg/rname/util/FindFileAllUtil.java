@@ -1,8 +1,9 @@
 package com.mg.rname.util;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @Auth CarlLing
@@ -10,10 +11,11 @@ import java.util.List;
  * @Version 1.0
  * @Desc 列出某目录下的所有目录和图片
  */
+@Slf4j
 public class FindFileAllUtil {
 
     public static void main(String args[]) {
-        String dirname = "F:/rename_image/image600/image";
+        String dirname = "F:/rename_image/image";
         //queryFileName(dirname);
         findFileDirName(dirname);
     }
@@ -26,37 +28,30 @@ public class FindFileAllUtil {
     public static void queryFileName(String dirname) {
         File f1 = new File(dirname);
         if (!f1.getName().equals("image") && !f1.getName().equals("主图")) {
-            System.out.println("------>" + f1.getName());
+            log.info("------>" + f1.getName());
         }
         if (f1.isDirectory()) {
-            System.out.println("*********************************");
-            System.out.println("--> " + dirname);
+            log.info("*********************************");
+            log.info("文件夹路径--> " + dirname);
             String s[] = f1.list();
             for (int i = 0; i < s.length; i++) {
                 String filename = dirname + "/" + s[i];
                 File f = new File(filename);
 
                 if (f.isDirectory()) {
-                    System.out.println("目录：" + s[i]);
+                    log.info("目录：" + s[i]);
                     queryFileName(filename);
 
 
                 } else {
-                    System.out.println("文件：" + s[i]);
+                    log.info("文件：" + s[i]);
 
                 }
             }
         } else {
-            System.out.println(dirname + " is not a directory");
+            log.info(dirname + " is not a directory");
         }
 
-/*        int num = 1;
-        int sum = 0;
-        for (String filename: dirNames){
-            System.out.println(filename );
-            sum = num ++;
-        }
-        System.out.println(sum);*/
     }
 
     /**
@@ -71,22 +66,21 @@ public class FindFileAllUtil {
         int sum = 0;
 
         if (f1.isDirectory()) {
-            System.out.println("*********************************");
-            System.out.println("--> " + dirname);
+            log.info("文件夹路径：--> " + dirname);
             String s[] = f1.list();
             for (int i = 0; i < s.length; i++) {
                 dirList.add(s[i]);
-                //System.out.println("目录：" + s[i]);
+                //log.info("目录： " + s[i]);
             }
         } else {
-            System.out.println(dirname + " is not a directory");
+            log.info(dirname + "is not a directory");
         }
 
         for (String filename : dirList) {
-            System.out.println(filename);
+            log.info("目录： "+ filename);
             sum = num++;
         }
-        System.out.println(sum);
+        log.info("总计类型文件夹：" + sum);
         return dirList;
     }
 }
