@@ -21,7 +21,7 @@ public class RenameOneFileUtil {
     }
 
     /**
-     * 单个类型外图片批量命名（不包括主图下）
+     * 单个类型外 图片批量命名（不包括主图下）
      *
      * @param path
      */

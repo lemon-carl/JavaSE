@@ -15,9 +15,9 @@ import java.util.ArrayList;
 public class FindFileAllUtil {
 
     public static void main(String args[]) {
-        String dirname = "F:/rename_image/image";
-        //queryFileName(dirname);
-        findFileDirName(dirname);
+        String dirname = "F:/rename_image";
+        queryFileName(dirname);
+        //findFileDirName(dirname);
     }
 
     /**

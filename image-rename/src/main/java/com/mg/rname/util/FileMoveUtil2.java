@@ -8,14 +8,14 @@ import java.io.*;
  * @Auth CarlLing
  * @Date 2019/8/23 15:59
  * @Version 1.0
- * @Desc copy 主图下jpg文件到类型目录下
+ * @Desc copy 类型下 jpg文件到共同目录下
  */
 @Slf4j
 public class FileMoveUtil2 {
 
     public static void main(String[] args) throws IOException {
 
-        String path = "F:\\rename_image";
+        String path = "F:/rename_image";
         findFileTypeDirMove(path);
 
     }
@@ -36,21 +36,28 @@ public class FileMoveUtil2 {
             if (rootfile.isDirectory()) {
                 String[] type = rootfile.list();
                 for (int i = 0; i < type.length; i++) {
-                    String oldPath = path + "\\" + type[i] ; //需要复制的文件
+                    //需要复制的文件
+                    String oldPath = path + "/" + type[i] ;
                     log.info("需要复制的文件-->"+oldPath);
-                    String newPath = path ; //复制后的文件
+
+                    //复制后的文件
+                    String newPath = path ;
                     log.info("复制后的文件-->"+newPath);
                     File oldFile = new File(oldPath);
                     File newFile = new File(newPath);
 
-                    String srcPath = oldFile.getAbsolutePath();//获得源路径
-                    String aimPath = newFile.getAbsolutePath();//获得目标路径
+                    //获得源路径
+                    String srcPath = oldFile.getAbsolutePath();
+                    //获得目标路径
+                    //String aimPath = newFile.getAbsolutePath();
+
                     //图片过滤器
                     FilenameFilter filter = new FilenameFilter() {
 
                         @Override
                         public boolean accept(File dir, String name) {
-                            return (name.endsWith(".jpg") || name.endsWith(".png"));//把以.jpg和.png结尾的文件过滤出来
+                            //把以.jpg和.png结尾的文件过滤出来
+                            return (name.endsWith(".jpg") || name.endsWith(".png"));
                         }
                     };
 
@@ -60,8 +67,8 @@ public class FileMoveUtil2 {
                     for (File img : str) {
                         System.out.println(img.getName());
 
-                        fis = new FileInputStream(oldFile + "\\" + img.getName());
-                        fos = new FileOutputStream(newFile + "\\" + img.getName());
+                        fis = new FileInputStream(oldFile + "/" + img.getName());
+                        fos = new FileOutputStream(newFile + "/" + img.getName());
 
                         //byte[] bytes = new byte[fis .available()];
                         byte[] bytes = new byte[1024];

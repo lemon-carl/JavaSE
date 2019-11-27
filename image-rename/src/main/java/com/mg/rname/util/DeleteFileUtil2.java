@@ -7,12 +7,18 @@ public class DeleteFileUtil2 {
 
   public static void main(String[] args) {
 
-    String path = "F:\\rename_image";
-    //deleteFolder(path);
+      String path = "F:\\rename_image";
+      //1.先删除类型目录下文件
+      deleteFolder(path);
 
-    deleteNullFolder(path);
+      // 2.再删除类型目录
+      //deleteNullFolder(path);
   }
 
+    /**
+     * 先批量删除类型目录下文件
+     * @param path
+     */
   public static void deleteFolder(String path) {
     File rootfile = new File(path);
     String[] type = rootfile.list();
@@ -45,6 +51,10 @@ public class DeleteFileUtil2 {
     }
   }
 
+    /**
+     * 批量删除空文件的类型目录
+     * @param dirname
+     */
   public static void deleteNullFolder(String dirname){
       File f1 = new File(dirname);
       if (f1.isDirectory()) {
