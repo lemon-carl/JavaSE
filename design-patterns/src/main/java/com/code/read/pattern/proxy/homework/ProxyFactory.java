@@ -1,8 +1,10 @@
 package com.code.read.pattern.proxy.homework;
 
 import javassist.*;
+import sun.misc.ProxyGenerator;
 
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -141,6 +143,8 @@ public class ProxyFactory {
         });
 
         proxy3.sayHello2("Carl", 27);
+
+        JdkProxy();
     }
 
     public interface InvocationHandler {
@@ -171,5 +175,12 @@ public class ProxyFactory {
         void sayHello2(String name, int i);
     }
 
+
+    public static void JdkProxy() throws IOException {
+        //定制版的动态代理 工具
+        String str = "$proxy1.class";
+        byte[] bytes = ProxyGenerator.generateProxyClass(str, new Class[]{TestService2.class});
+        Files.write(Paths.get(System.getProperty("user.dir") + "/target/" + str),bytes);
+    }
 
 }
